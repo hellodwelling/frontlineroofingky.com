@@ -1125,7 +1125,7 @@
             <div
         x-data="{
         activeImage: 0,
-        amountOfImages: 9,
+        amountOfImages: 10,
         next() {
             if (this.activeImage < this.amountOfImages - 1)
                 this.activeImage ++;
@@ -1334,6 +1334,8 @@
                 </li>
             
         
+            
+        
     </ul>
 
     <template x-teleport="body">
@@ -1436,6 +1438,13 @@
                                 <li class="flex flex-col" x-show="activeImage === 8">
                                     
                                     <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/filters:strip_exif()/filters:format(webp)/media/2fe84608-87f9-4d94-b1b4-4fef7aaa992e.jpeg" alt="Roofing for Frontline Roofing SCORP in Shelbyville, KY" loading="lazy"/>
+                                    <p lorem="1" class="mt-3 text-gray-500"></p>
+                                    
+                                </li>
+                                
+                                <li class="flex flex-col" x-show="activeImage === 9">
+                                    
+                                    <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/filters:strip_exif()/filters:format(webp)/media/d3fc1b60-c2ab-46c4-8564-40f68bde85d8.png" alt="Roofing for Frontline Roofing SCORP in Shelbyville, KY" loading="lazy"/>
                                     <p lorem="1" class="mt-3 text-gray-500"></p>
                                     
                                 </li>
