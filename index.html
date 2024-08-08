@@ -171,9 +171,10 @@
         contactChatOpen: false,
         active: 0,
         showAnnouncement: false,
-        customNavTransparent: false,
+        customNavTransparent:  false ,
         showMessage: false,
-        navbarHeight: ''
+        navbarHeight: '',
+        calculateTopMargin: true,
     }"
     x-effect="if (contactChatOpen === true) setTimeout(() => showMessage = true, 300)"
     :style="{ paddingTop: navbarHeight }"
@@ -260,20 +261,9 @@
 <nav
     id="nav-bar"
     x-ref="navbar"
-    x-data="{ scrolledFromTop: false }"
-    x-init="
-    window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false;
-    navbarHeight = $refs.navbar.offsetHeight - (customNavTransparent ? $refs.nav_menu.offsetHeight : 0) + 'px';
-    const root = document.querySelector(':root');
-    
-    const observer = new ResizeObserver(() => {
-        navbarHeight = $refs.navbar.offsetHeight - (customNavTransparent ? $refs.nav_menu.offsetHeight : 0) + 'px';
-        root.style.setProperty('--navbarHeight', navbarHeight);
-    });
-    observer.observe($refs.navbar);
-    "
+    x-data="{ scrolledFromTop: false, customNavTransparent:  false  }"
+    x-init="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false;"
     @scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false"
-    :class="{'h-32 w-screen': !scrolledFromTop, 'h-16 w-screen': scrolledFromTop}"
     class="w-screen fixed top-0 inset-x-0 z-50"
     data-heap-component-name="navigation"
     data-heap-version="v2.1"
@@ -282,9 +272,22 @@
     <div
         x-data="{ navOpen: false, scrolledFromTop: false, mobileOpen: false }"
         x-ref="nav_menu"
-        x-init="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false"
+        x-init="
+        window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false
+
+        const root = document.querySelector(':root');
+
+        const observer = new ResizeObserver(() => {
+            navbarHeight = calculateTopMargin ?
+                $refs.navbar.offsetHeight + 'px' :
+                $refs.navbar.offsetHeight - (customNavTransparent ? $refs.nav_menu.offsetHeight : 0) + 'px'
+
+            root.style.setProperty('--navbarHeight', navbarHeight);
+        });
+        observer.observe($refs.navbar);
+        "
         @scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false"
-        :class="{ 'translate-y-0 h-24 xl:h-44': !scrolledFromTop, 'h-24 shadow-magical': scrolledFromTop }"
+        :class="{ 'translate-y-0 xl:h-44': !scrolledFromTop, 'shadow-magical': scrolledFromTop }"
         class="relative transition-all duration-200  bg-white  h-24 xl:h-44"
     >
         <div class="h-full px-4 mx-auto transition duration-200 max-w-7xl sm:px-6 lg:px-8">
@@ -1778,581 +1781,197 @@
 >
     <ul role="list" class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 0; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
+            
+                <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
+                    <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                        <button
+                            @click="activeImage = 0; galleryModalOpen = true"
+                            class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
+                        >
+                            
+                                <div class="aspect-w-3 aspect-h-2">
                                     
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/a3944afc-a27c-4772-b3d2-b076fe6db2e0.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        
+                                            <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/a3944afc-a27c-4772-b3d2-b076fe6db2e0.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        
                                     
-                                
-                            </div>
+                                </div>
 
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+                                <div class="space-y-1 text-lg font-medium leading-6">
+                                    <p class="line-clamp-3"></p>
+                                    <h3 class="text-primary"></h3>
+                                </div>
+                            
+                        </button>
+                    </div>
+                </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 1; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
+            
+                <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
+                    <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                        <button
+                            @click="activeImage = 1; galleryModalOpen = true"
+                            class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
+                        >
+                            
+                                <div class="aspect-w-3 aspect-h-2">
                                     
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/4475ffdc-2a38-4230-892f-c57b799c0208.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        
+                                            <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/4475ffdc-2a38-4230-892f-c57b799c0208.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        
                                     
-                                
-                            </div>
+                                </div>
 
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+                                <div class="space-y-1 text-lg font-medium leading-6">
+                                    <p class="line-clamp-3"></p>
+                                    <h3 class="text-primary"></h3>
+                                </div>
+                            
+                        </button>
+                    </div>
+                </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 2; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
+            
+                <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
+                    <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                        <button
+                            @click="activeImage = 2; galleryModalOpen = true"
+                            class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
+                        >
+                            
+                                <div class="aspect-w-3 aspect-h-2">
                                     
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/396f3c77-c618-4715-983f-0219132ccdf6.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        
+                                            <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/396f3c77-c618-4715-983f-0219132ccdf6.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        
                                     
-                                
-                            </div>
+                                </div>
 
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+                                <div class="space-y-1 text-lg font-medium leading-6">
+                                    <p class="line-clamp-3"></p>
+                                    <h3 class="text-primary"></h3>
+                                </div>
+                            
+                        </button>
+                    </div>
+                </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 3; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
+            
+                <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
+                    <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                        <button
+                            @click="activeImage = 3; galleryModalOpen = true"
+                            class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
+                        >
+                            
+                                <div class="aspect-w-3 aspect-h-2">
                                     
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/6b3bafb4-4361-455c-b4ff-861aa2f548aa.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        
+                                            <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/6b3bafb4-4361-455c-b4ff-861aa2f548aa.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        
                                     
-                                
-                            </div>
+                                </div>
 
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+                                <div class="space-y-1 text-lg font-medium leading-6">
+                                    <p class="line-clamp-3"></p>
+                                    <h3 class="text-primary"></h3>
+                                </div>
+                            
+                        </button>
+                    </div>
+                </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 4; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
+            
+                <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
+                    <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                        <button
+                            @click="activeImage = 4; galleryModalOpen = true"
+                            class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
+                        >
+                            
+                                <div class="aspect-w-3 aspect-h-2">
                                     
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/ff7f99bd-8ebe-40f0-9957-7729c85d587c.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        
+                                            <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/ff7f99bd-8ebe-40f0-9957-7729c85d587c.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        
                                     
-                                
-                            </div>
+                                </div>
 
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+                                <div class="space-y-1 text-lg font-medium leading-6">
+                                    <p class="line-clamp-3"></p>
+                                    <h3 class="text-primary"></h3>
+                                </div>
+                            
+                        </button>
+                    </div>
+                </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 5; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
+            
+                <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
+                    <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                        <button
+                            @click="activeImage = 5; galleryModalOpen = true"
+                            class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
+                        >
+                            
+                                <div class="aspect-w-3 aspect-h-2">
                                     
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/18a00964-55bf-455a-8aaa-e2a1421b29de.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        
+                                            <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/18a00964-55bf-455a-8aaa-e2a1421b29de.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        
                                     
-                                
-                            </div>
+                                </div>
 
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+                                <div class="space-y-1 text-lg font-medium leading-6">
+                                    <p class="line-clamp-3"></p>
+                                    <h3 class="text-primary"></h3>
+                                </div>
+                            
+                        </button>
+                    </div>
+                </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 6; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/45265e4e-51c2-4585-8936-b0015df85179.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 7; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/bb1a1ed0-8211-4780-8ac7-548e8b97f256.png" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 8; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/d77cdc7b-8b8d-497c-8778-ebf99c8e779f.png" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 9; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/675c36f6-4501-4d03-9485-134c7699220d.png" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 10; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/5ab94ac3-3a98-4c81-87a1-1c807008b7fd.png" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 11; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/48bfc32a-2389-4215-b866-eff534e52927.png" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 12; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/02ec5d8d-05de-463f-a4a4-109e89796f1d.png" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 13; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/8c9e4588-f051-495e-a065-2c3c4a813535.png" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 14; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/a1c0b702-63d5-4964-bde0-9b8db0c615ad.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 15; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/d855866d-a90f-427d-b29d-35ae8a331aff.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 16; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/4f5d2c9f-c85f-4493-8259-5a577182d320.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 17; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/859543cc-8d77-426b-b9ec-e7443deaf8d2.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 18; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/0400822f-6477-439d-8827-750ab601608c.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 19; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/68f1e987-b13c-47cc-aa31-4e8d51731327.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 20; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/5a2d03b4-9e96-48eb-af1b-1a7443c21f53.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 21; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/45ccfe95-249a-4413-af90-8c475171fb94.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 22; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/2fe84608-87f9-4d94-b1b4-4fef7aaa992e.jpeg" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
-            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" hidden ">
-                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button
-                        @click="activeImage = 23; galleryModalOpen = true"
-                        class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                    >
-                        
-                            <div class="aspect-w-3 aspect-h-2">
-                                
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/d3fc1b60-c2ab-46c4-8564-40f68bde85d8.png" alt="Other Services for Frontline Roofing in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                
-                            </div>
-
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <p class="line-clamp-3"></p>
-                                <h3 class="text-primary"></h3>
-                            </div>
-                        
-                    </button>
-                </div>
-            </li>
+            
         
     </ul>
 
