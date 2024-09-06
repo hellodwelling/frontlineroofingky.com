@@ -1430,8 +1430,12 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    img.src = img.getAttribute('data-src');
-                    img.removeAttribute('data-src');
+                    const dataSrc = img.getAttribute('data-src');
+                    const src = img.getAttribute('src');
+                    if (!src && dataSrc) {
+                      img.src = dataSrc
+                      img.removeAttribute('data-src');
+                    }
                     observer.unobserve(img);
                 }
             });
