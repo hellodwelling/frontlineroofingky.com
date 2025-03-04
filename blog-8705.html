@@ -543,6 +543,26 @@
 
                             </div>
                         
+                            <div
+                                class="relative flex items-center"
+                                x-trap.inert="desktopOpen"
+                                x-data="{ desktopOpen: false }"
+                                @keydown.escape.stop="desktopOpen = false"
+                                @click.away="desktopOpen = false"
+                            >
+                                
+                                    <a
+                                        href=" our-home-services "
+                                        class=" border-transparent   hover:border-gray-300 hover:text-gray-700  group pb-5 pt-6 inline-flex items-center px-1 transition text-sm font-medium  focus:outline-none focus:ring-0 focus:ring-offset-0 uppercase"
+                                        :class="{ 'text-primary': true }"
+                                    >
+                                        Our Home Services
+                                    </a>
+                                
+                                
+
+                            </div>
+                        
                         
 
                     </div>
@@ -784,6 +804,17 @@
                                             href=" blog "
                                             class="text-gray-500 block px-3 py-2 text-base font-medium rounded-md border-secondary transition uppercase"
                                             >Blog</a
+                                        >
+                                    
+                                    
+                                </div>
+                            
+                                <div x-trap.inert="openMenu == 'navitem_8'">
+                                    
+                                        <a
+                                            href=" our-home-services "
+                                            class="text-gray-500 block px-3 py-2 text-base font-medium rounded-md border-secondary transition uppercase"
+                                            >Our Home Services</a
                                         >
                                     
                                     
