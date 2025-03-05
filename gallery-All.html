@@ -77,19 +77,19 @@
   
   .hero-image {
       background-color: var(--color-primary-foreground);
-      background-image: url("https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1500x1500/filters:strip_exif()/filters:no_upscale()/filters:format(webp)/media/1fe1c26c-f83f-4a5b-9a27-a5582f767b90.jpeg");
+      background-image: url("https://landing-page-app-hero-images.s3.amazonaws.com/media/289757f3-3755-407c-be46-be8bdb684638.mp4");
       background-size: cover;
   }
   
   .cta-image {
       background-color: var(--color-primary-foreground);
-      background-image: url("https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1500x1500/filters:strip_exif()/filters:no_upscale()/filters:format(webp)/media/d9a9c265-884f-4e99-a9d1-332afa54659e.jpeg");
+      background-image: url("https://landing-page-app-hero-images.s3.amazonaws.com/media/2bdf231c-8a71-4356-bb33-46535eb748ad.mp4");
       background-size: cover;
   }
   
   .final-cta-image {
       background-color: var(--color-primary-foreground);
-      background-image: url("https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1500x1500/filters:strip_exif()/filters:no_upscale()/filters:format(webp)/media/6977fe9c-0973-401d-a944-f551214aabf0.jpeg");
+      background-image: url("https://landing-page-app-hero-images.s3.amazonaws.com/media/f859f148-f461-466f-9379-8c06ea667d25.mp4");
       background-size: cover;
   }
   
@@ -101,13 +101,13 @@
   
   .final-cta-image-if-slider {
       background-color: var(--color-primary-foreground);
-      background-image: url("https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1500x1500/filters:strip_exif()/filters:no_upscale()/filters:format(webp)/media/6977fe9c-0973-401d-a944-f551214aabf0.jpeg");
+      background-image: url("https://landing-page-app-hero-images.s3.amazonaws.com/media/284c7404-f85b-4121-9417-1d0badfa5df9.mp4");
       background-size: cover;
   }
   
   .cta-image-if-slider {
       background-color: var(--color-primary-foreground);
-      background-image: url("https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1500x1500/filters:strip_exif()/filters:no_upscale()/filters:format(webp)/media/d9a9c265-884f-4e99-a9d1-332afa54659e.jpeg");
+      background-image: url("https://landing-page-app-hero-images.s3.amazonaws.com/media/e7c96022-8351-4d85-bdee-71944d2addec.mp4");
       background-size: cover;
   }
 </style>
@@ -4368,37 +4368,55 @@ function filterGalleryByDataId(filter) {
         <section
                 data-heap-component-name="final-cta"
                 data-heap-version="v2.1"
-                class="flex final-cta-image two-thirds-screen-height w-full bg-center bg-cover custom_text_color text-white">
-                <div style="--tw-bg-opacity:75%;" class="flex flex-col items-center justify-center px-6 py-12 text-center sm:px-6 lg:py-16 lg:px-8 w-full bg-primary">
-                <h2 class="flex flex-col items-center text-3xl font-extrabold sm:text-6xl">
-                    <span class="flex">Ready to get started?</span>
-                    <span class="flex">Book an appointment today.</span>
-                </h2>
-                <div class="w-full mt-5 sm:mt-8 sm:flex sm:justify-center">
-                    
-                    <div onclick="postCtaClick('text')" class="w-full sm:w-auto mr-4 cta_text_button">
-                        <button 
-                            @click="contactModalOpen = true"
-                            class="flex justify-center w-full relative rounded p-3 sm:px-10 sm:py-4 overflow-hidden group bg-secondary relative hover:bg-gradient-to-r hover:from-secondary-lighter hover:to-secondary-darker hover:ring-2 hover:ring-offset-2 hover:ring-secondary transition-all ease-out duration-300"
-                        >
-                            <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-                            <span class="relative">Get a Free Quote</span>
-                        </button>
-                    </div> 
-                    
-                        
-                    
-                    <div onclick="postCtaClick('call')" class="w-full sm:w-auto mr-4 cta_text_button mt-3 sm:mt-0">
-                        <a
-                            target = "_blank" 
-                            href="tel:(502) 257-2322"
-                            class="cta_call_conversion flex justify-center relative rounded p-3 sm:px-10 sm:py-4 overflow-hidden group bg-white relative hover:bg-gradient-to-r hover:from-secondary-lighter hover:to-secondary-darker text-secondary hover:ring-2 hover:ring-offset-2 hover:ring-secondary transition-all ease-out duration-300">
-                            <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-secondary opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-                            <span class="relative">Call Us</span>
-                        </a>
+                class="custom_text_color text-white">
+            <div
+                class="relative flex w-full overflow-hidden items-center justify-center h-[400px] sm:h-[800px]"
+            >
+                
+                <video
+                    id="hero-video"
+                    class="lazy absolute top-0 left-0 w-full h-full object-cover" autoplay loop playsinline muted
+                >
+                    <source data-src="https://landing-page-app-hero-images.s3.amazonaws.com/media/f859f148-f461-466f-9379-8c06ea667d25.mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <main
+                    style="--tw-bg-opacity:75%;"
+                    class="flex h-[400px] sm:h-[800px] relative justify-center m-auto w-full bg-primary"
+                >
+                    <div class="flex flex-col text-center justify-center items-center mx-8 sm:mx-auto sm:w-1/2">
+                        <h2 class="flex flex-col items-center text-3xl font-extrabold sm:text-6xl">
+                            <span class="flex">Ready to get started?</span>
+                            <span class="flex">Book an appointment today.</span>
+                        </h2>
+                        <div class="w-full mt-5 sm:mt-8 sm:flex sm:justify-center">
+                            
+                            <div onclick="postCtaClick('text')" class="w-full sm:w-auto mr-4 cta_text_button">
+                                <button 
+                                    @click="contactModalOpen = true"
+                                    class="flex justify-center w-full relative rounded p-3 sm:px-10 sm:py-4 overflow-hidden group bg-secondary relative hover:bg-gradient-to-r hover:from-secondary-lighter hover:to-secondary-darker hover:ring-2 hover:ring-offset-2 hover:ring-secondary transition-all ease-out duration-300"
+                                >
+                                    <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                                    <span class="relative">Get a Free Quote</span>
+                                </button>
+                            </div> 
+                            
+                                
+                            
+                            <div onclick="postCtaClick('call')" class=" mt-3 sm:mt-0">
+                                <a
+                                    target = "_blank" 
+                                    href="tel:(502) 257-2322"
+                                    class="cta_call_conversion flex justify-center relative rounded p-3 sm:px-10 sm:py-4 overflow-hidden group bg-white relative hover:bg-gradient-to-r hover:from-secondary-lighter hover:to-secondary-darker text-secondary hover:ring-2 hover:ring-offset-2 hover:ring-secondary transition-all ease-out duration-300">
+                                    <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-secondary opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                                    <span class="relative">Call Us</span>
+                                </a>
+                            </div>
+                            
+                        </div>
                     </div>
-                    
-                </div>
+                </main>
             </div>
         </section>
     
