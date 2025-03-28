@@ -95,7 +95,7 @@
   
   .all-photos-hero-image {
       background-color: var(--color-primary-foreground);
-      background-image: url("https://d3p2r6ofnvoe67.cloudfront.net/media/2c862f40-ab4c-46c5-bf75-e584e4325db3.mp4");
+      background-image: url("https://d3p2r6ofnvoe67.cloudfront.net/media/5abace34-27af-4cdd-a979-86a2263379b3.jpeg");
       background-size: cover;
   }
   
@@ -1172,8 +1172,312 @@
                     <div @keydown.right="next" @keydown.left="prev" tabindex="0" role="region" aria-labelledby="carousel-label" class="relative focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2">
                         <h2 id="carousel-label" class="sr-only" hidden>Reviews Carousel</h2>
                         
+                        <div class="absolute flex justify-between -inset-8">
+                            <button @click="prev" class="text-6xl">
+                                <svg aria-hidden="true" class="w-6 h-6" fill="none">
+                                    <path d="m10 19-7-7m0 0 7-7m-7 7h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span class="sr-only">Skip to previous review</span>
+                            </button>
+                            <button @click="next" class="text-6xl">
+                                <svg aria-hidden="true" class="w-6 h-6" fill="none">
+                                    <path d="m14 5 7 7m0 0-7 7m7-7H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span class="sr-only">Skip to next slide</span>
+                            </button>
+                        </div>
+                        
                         <span id="carousel-content-label" class="sr-only" hidden>Carousel</span>
                         <ul id="services-image-slider" x-ref="slider" tabindex="0" role="listbox" aria-labelledby="carousel-content-label" class="hide-scrollbars">
+                            
+                                <li class="translate-z-0" role="option">
+                                    <div class="flex flex-col items-center justify-center h-full w-full p-10">
+                                        <div class="h-[229px] sm:h-[481px]">
+                                           
+                                            
+                                                <img
+                                                    class="block sm:hidden object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/d26f7558-585b-4a3e-9cdf-2ab7685068e4.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loadin="lazy"
+                                                />
+                                                <img
+                                                    class="hidden sm:block object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/d26f7558-585b-4a3e-9cdf-2ab7685068e4.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loading="lazy"
+                                                />
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="translate-z-0" role="option">
+                                    <div class="flex flex-col items-center justify-center h-full w-full p-10">
+                                        <div class="h-[229px] sm:h-[481px]">
+                                           
+                                            
+                                                <img
+                                                    class="block sm:hidden object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/b7dea935-4505-4457-9106-d31784b8d26f.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loadin="lazy"
+                                                />
+                                                <img
+                                                    class="hidden sm:block object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/b7dea935-4505-4457-9106-d31784b8d26f.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loading="lazy"
+                                                />
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="translate-z-0" role="option">
+                                    <div class="flex flex-col items-center justify-center h-full w-full p-10">
+                                        <div class="h-[229px] sm:h-[481px]">
+                                           
+                                            
+                                                <img
+                                                    class="block sm:hidden object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/a2a3cd0f-2043-4686-8db4-65b65fed4ed6.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loadin="lazy"
+                                                />
+                                                <img
+                                                    class="hidden sm:block object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/a2a3cd0f-2043-4686-8db4-65b65fed4ed6.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loading="lazy"
+                                                />
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="translate-z-0" role="option">
+                                    <div class="flex flex-col items-center justify-center h-full w-full p-10">
+                                        <div class="h-[229px] sm:h-[481px]">
+                                           
+                                            
+                                                <img
+                                                    class="block sm:hidden object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/0b8d7b3e-09b3-4aa1-861b-1a7b6e79ac31.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loadin="lazy"
+                                                />
+                                                <img
+                                                    class="hidden sm:block object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/0b8d7b3e-09b3-4aa1-861b-1a7b6e79ac31.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loading="lazy"
+                                                />
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="translate-z-0" role="option">
+                                    <div class="flex flex-col items-center justify-center h-full w-full p-10">
+                                        <div class="h-[229px] sm:h-[481px]">
+                                           
+                                            
+                                                <img
+                                                    class="block sm:hidden object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/aba6b43d-2080-4f05-9f63-573869d56024.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loadin="lazy"
+                                                />
+                                                <img
+                                                    class="hidden sm:block object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/aba6b43d-2080-4f05-9f63-573869d56024.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loading="lazy"
+                                                />
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="translate-z-0" role="option">
+                                    <div class="flex flex-col items-center justify-center h-full w-full p-10">
+                                        <div class="h-[229px] sm:h-[481px]">
+                                           
+                                            
+                                                <img
+                                                    class="block sm:hidden object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/b0933ff2-7f0e-4a80-8692-b090c1829dc1.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loadin="lazy"
+                                                />
+                                                <img
+                                                    class="hidden sm:block object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/b0933ff2-7f0e-4a80-8692-b090c1829dc1.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loading="lazy"
+                                                />
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="translate-z-0" role="option">
+                                    <div class="flex flex-col items-center justify-center h-full w-full p-10">
+                                        <div class="h-[229px] sm:h-[481px]">
+                                           
+                                            
+                                                <img
+                                                    class="block sm:hidden object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/72b09f27-cd1c-4803-ba6d-cee956200a3e.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loadin="lazy"
+                                                />
+                                                <img
+                                                    class="hidden sm:block object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/72b09f27-cd1c-4803-ba6d-cee956200a3e.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loading="lazy"
+                                                />
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="translate-z-0" role="option">
+                                    <div class="flex flex-col items-center justify-center h-full w-full p-10">
+                                        <div class="h-[229px] sm:h-[481px]">
+                                           
+                                            
+                                                <img
+                                                    class="block sm:hidden object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/f7075725-213a-42fe-8fc1-5abef4837867.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loadin="lazy"
+                                                />
+                                                <img
+                                                    class="hidden sm:block object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/f7075725-213a-42fe-8fc1-5abef4837867.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loading="lazy"
+                                                />
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="translate-z-0" role="option">
+                                    <div class="flex flex-col items-center justify-center h-full w-full p-10">
+                                        <div class="h-[229px] sm:h-[481px]">
+                                           
+                                            
+                                                <img
+                                                    class="block sm:hidden object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/eea59509-db85-4f92-801e-16373384ef90.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loadin="lazy"
+                                                />
+                                                <img
+                                                    class="hidden sm:block object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/eea59509-db85-4f92-801e-16373384ef90.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loading="lazy"
+                                                />
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="translate-z-0" role="option">
+                                    <div class="flex flex-col items-center justify-center h-full w-full p-10">
+                                        <div class="h-[229px] sm:h-[481px]">
+                                           
+                                            
+                                                <img
+                                                    class="block sm:hidden object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/79dc3f51-0729-4a57-97c3-80d98c64fa6a.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loadin="lazy"
+                                                />
+                                                <img
+                                                    class="hidden sm:block object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/79dc3f51-0729-4a57-97c3-80d98c64fa6a.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loading="lazy"
+                                                />
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="translate-z-0" role="option">
+                                    <div class="flex flex-col items-center justify-center h-full w-full p-10">
+                                        <div class="h-[229px] sm:h-[481px]">
+                                           
+                                            
+                                                <img
+                                                    class="block sm:hidden object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/b203944e-993f-46b8-a12d-335bd03a9d52.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loadin="lazy"
+                                                />
+                                                <img
+                                                    class="hidden sm:block object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/b203944e-993f-46b8-a12d-335bd03a9d52.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loading="lazy"
+                                                />
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="translate-z-0" role="option">
+                                    <div class="flex flex-col items-center justify-center h-full w-full p-10">
+                                        <div class="h-[229px] sm:h-[481px]">
+                                           
+                                            
+                                                <img
+                                                    class="block sm:hidden object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/9ffcf9ac-e274-4740-9f63-71f7438d69ad.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loadin="lazy"
+                                                />
+                                                <img
+                                                    class="hidden sm:block object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/9ffcf9ac-e274-4740-9f63-71f7438d69ad.jpeg"
+                                                    alt="Concrete Work for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loading="lazy"
+                                                />
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="translate-z-0" role="option">
+                                    <div class="flex flex-col items-center justify-center h-full w-full p-10">
+                                        <div class="h-[229px] sm:h-[481px]">
+                                           
+                                           
+                                                <video class="object-contain lazy w-full h-full rounded-lg rounded-lg" preload="none" controls  autoplay loop playsinline muted>
+                                                     <source data-src="https://landing-page-app-hero-images.s3.amazonaws.com/media/2c862f40-ab4c-46c5-bf75-e584e4325db3.mp4#t=0.5" >
+                                                </video>
+                                            
+                                        </div>
+                                    </div>
+                                </li>
                             
                         </ul>
                     </div>
