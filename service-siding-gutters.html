@@ -1254,6 +1254,21 @@
                     <div @keydown.right="next" @keydown.left="prev" tabindex="0" role="region" aria-labelledby="carousel-label" class="relative focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2">
                         <h2 id="carousel-label" class="sr-only" hidden>Reviews Carousel</h2>
                         
+                        <div class="absolute flex justify-between -inset-8">
+                            <button @click="prev" class="text-6xl">
+                                <svg aria-hidden="true" class="w-6 h-6" fill="none">
+                                    <path d="m10 19-7-7m0 0 7-7m-7 7h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span class="sr-only">Skip to previous review</span>
+                            </button>
+                            <button @click="next" class="text-6xl">
+                                <svg aria-hidden="true" class="w-6 h-6" fill="none">
+                                    <path d="m14 5 7 7m0 0-7 7m7-7H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span class="sr-only">Skip to next slide</span>
+                            </button>
+                        </div>
+                        
                         <span id="carousel-content-label" class="sr-only" hidden>Carousel</span>
                         <ul id="services-image-slider" x-ref="slider" tabindex="0" role="listbox" aria-labelledby="carousel-content-label" class="hide-scrollbars">
                             
@@ -1264,13 +1279,36 @@
                                             
                                                 <img
                                                     class="block sm:hidden object-contain w-full h-full rounded-lg" 
-                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/6eef20b4-5fa7-4b9d-80aa-9dcb2d09b643.jpeg"
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/e08b4631-8434-403b-b9d9-69c0c21f29d1.jpeg"
                                                     alt="Siding &amp; Gutters for Frontline Roofing &amp; Home Services in Shelbyville, KY"
                                                     loadin="lazy"
                                                 />
                                                 <img
                                                     class="hidden sm:block object-contain w-full h-full rounded-lg" 
-                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/6eef20b4-5fa7-4b9d-80aa-9dcb2d09b643.jpeg"
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/e08b4631-8434-403b-b9d9-69c0c21f29d1.jpeg"
+                                                    alt="Siding &amp; Gutters for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loading="lazy"
+                                                />
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                                <li class="translate-z-0" role="option">
+                                    <div class="flex flex-col items-center justify-center h-full w-full p-10">
+                                        <div class="h-[229px] sm:h-[481px]">
+                                           
+                                            
+                                                <img
+                                                    class="block sm:hidden object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/500x500/filters:strip_exif()/filters:no_upscale()/media/a4692696-5b81-4e63-84c5-17338e03ab68.jpeg"
+                                                    alt="Siding &amp; Gutters for Frontline Roofing &amp; Home Services in Shelbyville, KY"
+                                                    loadin="lazy"
+                                                />
+                                                <img
+                                                    class="hidden sm:block object-contain w-full h-full rounded-lg" 
+                                                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1200x1200/filters:strip_exif()/filters:no_upscale()/media/a4692696-5b81-4e63-84c5-17338e03ab68.jpeg"
                                                     alt="Siding &amp; Gutters for Frontline Roofing &amp; Home Services in Shelbyville, KY"
                                                     loading="lazy"
                                                 />
