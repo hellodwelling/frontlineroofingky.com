@@ -32,13 +32,6 @@
     </url>
 
     <url>
-        <loc>https://frontlineroofingky.com/service-deck-building</loc>
-        <lastmod>2025-07-14</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-    <url>
         <loc>https://frontlineroofingky.com/service-soft-wash-pressure-washing</loc>
         <lastmod>2025-07-14</lastmod>
         <changefreq>weekly</changefreq>
@@ -75,6 +68,13 @@
 
     <url>
         <loc>https://frontlineroofingky.com/service-siding-gutters</loc>
+        <lastmod>2025-07-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://frontlineroofingky.com/service-deck-building</loc>
         <lastmod>2025-07-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
