@@ -96,7 +96,7 @@
   
   .all-photos-hero-image {
       background-color: var(--color-primary-foreground);
-      background-image: url("https://d3p2r6ofnvoe67.cloudfront.net/media/1e622fb7-832a-4435-99a5-87bc1f41587d.jpeg");
+      background-image: url("https://d3p2r6ofnvoe67.cloudfront.net/media/f357a1bb-83f6-42af-8429-2c49c756db88.mp4");
       background-size: cover;
   }
   
@@ -2184,7 +2184,10 @@
                             
                                 <div class="aspect-w-3 aspect-h-2">
                                     
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out lazy"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/1e622fb7-832a-4435-99a5-87bc1f41587d.jpeg"  alt="Other Services for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        <video class="lazy rounded shadow-md object-cover w-full h-full object-cover lazy" preload="none" autoplay loop playsinline controls muted>
+                                            <source  src="https://landing-page-app-hero-images.s3.amazonaws.com/media/f357a1bb-83f6-42af-8429-2c49c756db88.mp4#t=0.5" >
+                                            Your browser does not support the video tag.
+                                        </video>
                                     
                                 </div>
 
@@ -2203,6 +2206,30 @@
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
                             @click="activeImage = 1; galleryModalOpen = true"
+                            class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
+                        >
+                            
+                                <div class="aspect-w-3 aspect-h-2">
+                                    
+                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out lazy"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/1e622fb7-832a-4435-99a5-87bc1f41587d.jpeg"  alt="Other Services for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                    
+                                </div>
+
+                                <div class="space-y-1 text-lg font-medium leading-6">
+                                    <p class="line-clamp-3"></p>
+                                    <h3 class="text-primary"></h3>
+                                </div>
+                            
+                        </button>
+                    </div>
+                </li>
+            
+        
+            
+                <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
+                    <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                        <button
+                            @click="activeImage = 2; galleryModalOpen = true"
                             class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
                         >
                             
@@ -2229,7 +2256,7 @@
                 <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
-                            @click="activeImage = 2; galleryModalOpen = true"
+                            @click="activeImage = 3; galleryModalOpen = true"
                             class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
                         >
                             
@@ -2256,7 +2283,7 @@
                 <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
-                            @click="activeImage = 3; galleryModalOpen = true"
+                            @click="activeImage = 4; galleryModalOpen = true"
                             class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
                         >
                             
@@ -2283,7 +2310,7 @@
                 <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
-                            @click="activeImage = 4; galleryModalOpen = true"
+                            @click="activeImage = 5; galleryModalOpen = true"
                             class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
                         >
                             
@@ -2310,7 +2337,7 @@
                 <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
-                            @click="activeImage = 5; galleryModalOpen = true"
+                            @click="activeImage = 6; galleryModalOpen = true"
                             class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
                         >
                             
@@ -2334,7 +2361,7 @@
                 <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
-                            @click="activeImage = 6; galleryModalOpen = true"
+                            @click="activeImage = 7; galleryModalOpen = true"
                             class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
                         >
                             
@@ -2358,7 +2385,7 @@
                 <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
-                            @click="activeImage = 7; galleryModalOpen = true"
+                            @click="activeImage = 8; galleryModalOpen = true"
                             class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
                         >
                             
@@ -2385,7 +2412,7 @@
                 <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
-                            @click="activeImage = 8; galleryModalOpen = true"
+                            @click="activeImage = 9; galleryModalOpen = true"
                             class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
                         >
                             
@@ -2412,7 +2439,7 @@
                 <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
-                            @click="activeImage = 9; galleryModalOpen = true"
+                            @click="activeImage = 10; galleryModalOpen = true"
                             class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
                         >
                             
@@ -2436,7 +2463,7 @@
                 <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
-                            @click="activeImage = 10; galleryModalOpen = true"
+                            @click="activeImage = 11; galleryModalOpen = true"
                             class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
                         >
                             
@@ -2460,7 +2487,7 @@
                 <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
-                            @click="activeImage = 11; galleryModalOpen = true"
+                            @click="activeImage = 12; galleryModalOpen = true"
                             class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
                         >
                             
@@ -2484,7 +2511,7 @@
                 <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
-                            @click="activeImage = 12; galleryModalOpen = true"
+                            @click="activeImage = 13; galleryModalOpen = true"
                             class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
                         >
                             
@@ -2511,7 +2538,7 @@
                 <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
-                            @click="activeImage = 13; galleryModalOpen = true"
+                            @click="activeImage = 14; galleryModalOpen = true"
                             class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
                         >
                             
@@ -2538,37 +2565,13 @@
                 <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
-                            @click="activeImage = 14; galleryModalOpen = true"
-                            class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
-                        >
-                            
-                                <div class="aspect-w-3 aspect-h-2">
-                                    
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out lazy"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/699d80a0-f642-4e39-b669-71f8e2903a59.jpeg"  alt="Other Services for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy" decoding="async"/>
-                                    
-                                </div>
-
-                                <div class="space-y-1 text-lg font-medium leading-6">
-                                    <p class="line-clamp-3"></p>
-                                    <h3 class="text-primary"></h3>
-                                </div>
-                            
-                        </button>
-                    </div>
-                </li>
-            
-        
-            
-                <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true">
-                    <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                        <button
                             @click="activeImage = 15; galleryModalOpen = true"
                             class="photo-tile block w-full h-full text-left rounded focus:outline-none focus-visible:ring focus:ring-0 focus:ring-offset-0"
                         >
                             
                                 <div class="aspect-w-3 aspect-h-2">
                                     
-                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out lazy"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/cd575c2a-050b-4e0e-a0f4-83e7c26a2951.jpeg"  alt="Other Services for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        <img class="object-cover rounded-md shadow-lg hover:scale-110 transition duration-300 ease-in-out lazy"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/699d80a0-f642-4e39-b669-71f8e2903a59.jpeg"  alt="Other Services for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy" decoding="async"/>
                                     
                                 </div>
 
@@ -2627,6 +2630,16 @@
                                 
                                 <li class="flex flex-col" x-show="activeImage === 0">
                                     
+                                    <video class="gallery-modal-video lazy bg-black rounded shadow-md object-contain w-full lg:h-[481px] h-[200px] sm:h-[300px]" autoplay loop controls muted>
+                                        <source data-src="https://landing-page-app-hero-images.s3.amazonaws.com/media/f357a1bb-83f6-42af-8429-2c49c756db88.mp4#t=0.5">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p lorem="1" class="mt-3 text-gray-500"></p>
+                                    
+                                </li>
+                                
+                                <li class="flex flex-col" x-show="activeImage === 1">
+                                    
                                         
                                             <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/1e622fb7-832a-4435-99a5-87bc1f41587d.jpeg" alt="Other Services for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
@@ -2634,7 +2647,7 @@
                                     
                                 </li>
                                 
-                                <li class="flex flex-col" x-show="activeImage === 1">
+                                <li class="flex flex-col" x-show="activeImage === 2">
                                     
                                     <video class="gallery-modal-video lazy bg-black rounded shadow-md object-contain w-full lg:h-[481px] h-[200px] sm:h-[300px]" autoplay loop controls muted>
                                         <source data-src="https://landing-page-app-hero-images.s3.amazonaws.com/media/09d478b7-a348-454b-b4a0-6746130d7d18.mp4#t=0.5">
@@ -2644,7 +2657,7 @@
                                     
                                 </li>
                                 
-                                <li class="flex flex-col" x-show="activeImage === 2">
+                                <li class="flex flex-col" x-show="activeImage === 3">
                                     
                                     <video class="gallery-modal-video lazy bg-black rounded shadow-md object-contain w-full lg:h-[481px] h-[200px] sm:h-[300px]" autoplay loop controls muted>
                                         <source data-src="https://landing-page-app-hero-images.s3.amazonaws.com/media/863ccb13-ea94-4e06-811d-30601310cd81.mp4#t=0.5">
@@ -2654,7 +2667,7 @@
                                     
                                 </li>
                                 
-                                <li class="flex flex-col" x-show="activeImage === 3">
+                                <li class="flex flex-col" x-show="activeImage === 4">
                                     
                                     <video class="gallery-modal-video lazy bg-black rounded shadow-md object-contain w-full lg:h-[481px] h-[200px] sm:h-[300px]" autoplay loop controls muted>
                                         <source data-src="https://landing-page-app-hero-images.s3.amazonaws.com/media/8bc71d2b-15a1-49d1-b647-ad6ad3ad7c8e.mp4#t=0.5">
@@ -2664,7 +2677,7 @@
                                     
                                 </li>
                                 
-                                <li class="flex flex-col" x-show="activeImage === 4">
+                                <li class="flex flex-col" x-show="activeImage === 5">
                                     
                                     <video class="gallery-modal-video lazy bg-black rounded shadow-md object-contain w-full lg:h-[481px] h-[200px] sm:h-[300px]" autoplay loop controls muted>
                                         <source data-src="https://landing-page-app-hero-images.s3.amazonaws.com/media/4fdf54ed-675e-4403-b898-973e6dd11383.mp4#t=0.5">
@@ -2674,7 +2687,7 @@
                                     
                                 </li>
                                 
-                                <li class="flex flex-col" x-show="activeImage === 5">
+                                <li class="flex flex-col" x-show="activeImage === 6">
                                     
                                         
                                             <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/e20e36e9-830e-4755-953e-1fe478028d05.jpeg" alt="Other Services for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
@@ -2683,7 +2696,7 @@
                                     
                                 </li>
                                 
-                                <li class="flex flex-col" x-show="activeImage === 6">
+                                <li class="flex flex-col" x-show="activeImage === 7">
                                     
                                         
                                             <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/334df714-a790-423a-9e9a-03f034f62759.jpeg" alt="Other Services for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
@@ -2692,7 +2705,7 @@
                                     
                                 </li>
                                 
-                                <li class="flex flex-col" x-show="activeImage === 7">
+                                <li class="flex flex-col" x-show="activeImage === 8">
                                     
                                     <video class="gallery-modal-video lazy bg-black rounded shadow-md object-contain w-full lg:h-[481px] h-[200px] sm:h-[300px]" autoplay loop controls muted>
                                         <source data-src="https://landing-page-app-hero-images.s3.amazonaws.com/media/1288ec29-003c-4e89-b54b-e6334e9d6fb0.mp4#t=0.5">
@@ -2702,7 +2715,7 @@
                                     
                                 </li>
                                 
-                                <li class="flex flex-col" x-show="activeImage === 8">
+                                <li class="flex flex-col" x-show="activeImage === 9">
                                     
                                     <video class="gallery-modal-video lazy bg-black rounded shadow-md object-contain w-full lg:h-[481px] h-[200px] sm:h-[300px]" autoplay loop controls muted>
                                         <source data-src="https://landing-page-app-hero-images.s3.amazonaws.com/media/59d6990f-6d7d-46dc-80a8-d99a763cd09b.mp4#t=0.5">
@@ -2712,7 +2725,7 @@
                                     
                                 </li>
                                 
-                                <li class="flex flex-col" x-show="activeImage === 9">
+                                <li class="flex flex-col" x-show="activeImage === 10">
                                     
                                         
                                             <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/869d3474-a339-4698-8e6a-1fbcabf33f02.jpeg" alt="Other Services for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
@@ -2721,7 +2734,7 @@
                                     
                                 </li>
                                 
-                                <li class="flex flex-col" x-show="activeImage === 10">
+                                <li class="flex flex-col" x-show="activeImage === 11">
                                     
                                         
                                             <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/d6eddcb9-5000-4093-9364-d0c094213e26.jpeg" alt="Other Services for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
@@ -2730,7 +2743,7 @@
                                     
                                 </li>
                                 
-                                <li class="flex flex-col" x-show="activeImage === 11">
+                                <li class="flex flex-col" x-show="activeImage === 12">
                                     
                                         
                                             <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/b94ec29f-a6c2-4c98-9f93-3f7c22f484b6.jpeg" alt="Other Services for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
@@ -2739,7 +2752,7 @@
                                     
                                 </li>
                                 
-                                <li class="flex flex-col" x-show="activeImage === 12">
+                                <li class="flex flex-col" x-show="activeImage === 13">
                                     
                                     <video class="gallery-modal-video lazy bg-black rounded shadow-md object-contain w-full lg:h-[481px] h-[200px] sm:h-[300px]" autoplay loop controls muted>
                                         <source data-src="https://landing-page-app-hero-images.s3.amazonaws.com/media/661cfc31-2805-4f1b-8f19-04dc9188244b.mp4#t=0.5">
@@ -2749,7 +2762,7 @@
                                     
                                 </li>
                                 
-                                <li class="flex flex-col" x-show="activeImage === 13">
+                                <li class="flex flex-col" x-show="activeImage === 14">
                                     
                                     <video class="gallery-modal-video lazy bg-black rounded shadow-md object-contain w-full lg:h-[481px] h-[200px] sm:h-[300px]" autoplay loop controls muted>
                                         <source data-src="https://landing-page-app-hero-images.s3.amazonaws.com/media/f77dc589-385a-4282-9c02-9aa751544ec4.mp4#t=0.5">
@@ -2759,19 +2772,10 @@
                                     
                                 </li>
                                 
-                                <li class="flex flex-col" x-show="activeImage === 14">
-                                    
-                                        
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/699d80a0-f642-4e39-b669-71f8e2903a59.jpeg" alt="Other Services for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
-                                            <p lorem="1" class="mt-3 text-gray-500"></p>
-                                        
-                                    
-                                </li>
-                                
                                 <li class="flex flex-col" x-show="activeImage === 15">
                                     
                                         
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/cd575c2a-050b-4e0e-a0f4-83e7c26a2951.jpeg" alt="Other Services for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/699d80a0-f642-4e39-b669-71f8e2903a59.jpeg" alt="Other Services for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     
