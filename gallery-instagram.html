@@ -96,7 +96,7 @@
   
   .all-photos-hero-image {
       background-color: var(--color-primary-foreground);
-      background-image: url("https://d3p2r6ofnvoe67.cloudfront.net/media/d4b387a3-901c-4609-883b-b5d40a87a1a4.jpeg");
+      background-image: url("https://d3p2r6ofnvoe67.cloudfront.net/media/3d5872ab-ccee-4a44-bf72-8de0eb9a9923.mp4");
       background-size: cover;
   }
   
@@ -1212,7 +1212,7 @@
                         <div
         x-data="{
             activeImage: 0,
-            amountOfImages: 7,
+            amountOfImages: 9,
             next() {
                 if (this.activeImage < this.amountOfImages - 1)
                     this.activeImage ++;
@@ -1315,7 +1315,7 @@
                             
                                 <div class="aspect-w-3 aspect-h-2">
                                     
-                                        <img class="object-cover lazy"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/ee9d2891-83cd-4632-a7fd-2db8f4007751.jpeg"  alt="instagram for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        <img class="object-cover lazy"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/967a7cd9-1294-4b4f-8fb1-688ad3db66cc.png"  alt="instagram for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy" decoding="async"/>
                                     
                                 </div>
 
@@ -1363,7 +1363,7 @@
                             
                                 <div class="aspect-w-3 aspect-h-2">
                                     
-                                        <img class="object-cover lazy"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/967a7cd9-1294-4b4f-8fb1-688ad3db66cc.png"  alt="instagram for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                        <img class="object-cover lazy"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/d4b387a3-901c-4609-883b-b5d40a87a1a4.jpeg"  alt="instagram for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy" decoding="async"/>
                                     
                                 </div>
 
@@ -1382,6 +1382,57 @@
                     <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                         <button
                             @click="activeImage = 6; galleryModalOpen = true"
+                            class="photo-tile block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75"
+                        >
+                            
+                                <div class="aspect-w-3 aspect-h-2">
+                                    
+                                        <img class="object-cover lazy"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/ee9d2891-83cd-4632-a7fd-2db8f4007751.jpeg"  alt="instagram for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy" decoding="async"/>
+                                    
+                                </div>
+
+                                <div class="space-y-1 text-lg font-medium leading-6">
+                                    <p class="line-clamp-3"></p>
+                                    <h3 class="text-primary"></h3>
+                                </div>
+                            
+                        </button>
+                    </div>
+                </li>
+            
+        
+            
+                <li data-id="gallery_media" data-gallery="" x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class="">
+                    <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                        <button
+                            @click="activeImage = 7; galleryModalOpen = true"
+                            class="photo-tile block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75"
+                        >
+                            
+                                <div class="aspect-w-3 aspect-h-2">
+                                    
+                                        <video class="object-cover lazy" preload="none" autoplay loop playsinline controls muted>
+                                            <source  src="https://landing-page-app-hero-images.s3.amazonaws.com/media/3d5872ab-ccee-4a44-bf72-8de0eb9a9923.mp4#t=0.5" >
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    
+                                </div>
+
+                                <div class="space-y-1 text-lg font-medium leading-6">
+                                    <p class="line-clamp-3"></p>
+                                    <h3 class="text-primary"></h3>
+                                </div>
+                            
+                        </button>
+                    </div>
+                </li>
+            
+        
+            
+                <li data-id="gallery_media" data-gallery="" x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class="">
+                    <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                        <button
+                            @click="activeImage = 8; galleryModalOpen = true"
                             class="photo-tile block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75"
                         >
                             
@@ -1475,7 +1526,7 @@
                                 <li class="flex flex-col" x-show="activeImage === 3">
                                     
                                         
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/ee9d2891-83cd-4632-a7fd-2db8f4007751.jpeg" alt="instagram for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/967a7cd9-1294-4b4f-8fb1-688ad3db66cc.png" alt="instagram for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     
@@ -1493,13 +1544,32 @@
                                 <li class="flex flex-col" x-show="activeImage === 5">
                                     
                                         
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/967a7cd9-1294-4b4f-8fb1-688ad3db66cc.png" alt="instagram for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/d4b387a3-901c-4609-883b-b5d40a87a1a4.jpeg" alt="instagram for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     
                                 </li>
                                 
                                 <li class="flex flex-col" x-show="activeImage === 6">
+                                    
+                                        
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/ee9d2891-83cd-4632-a7fd-2db8f4007751.jpeg" alt="instagram for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
+                                            <p lorem="1" class="mt-3 text-gray-500"></p>
+                                        
+                                    
+                                </li>
+                                
+                                <li class="flex flex-col" x-show="activeImage === 7">
+                                    
+                                    <video class="gallery-modal-video lazy bg-black rounded shadow-md object-contain w-full lg:h-[481px] h-[200px] sm:h-[300px]" autoplay loop controls muted>
+                                        <source data-src="https://landing-page-app-hero-images.s3.amazonaws.com/media/3d5872ab-ccee-4a44-bf72-8de0eb9a9923.mp4#t=0.5">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p lorem="1" class="mt-3 text-gray-500"></p>
+                                    
+                                </li>
+                                
+                                <li class="flex flex-col" x-show="activeImage === 8">
                                     
                                         
                                             <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/1000x1000/filters:strip_exif()/filters:no_upscale()/media/a9af614c-a28d-4b07-bcc3-93fa32c74185.jpeg" alt="instagram for Frontline Roofing &amp; Home Services in Shelbyville, KY" loading="lazy"/>
