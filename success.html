@@ -96,7 +96,7 @@
   
   .all-photos-hero-image {
       background-color: var(--color-primary-foreground);
-      background-image: url("https://d3p2r6ofnvoe67.cloudfront.net/media/88ab39d9-c60f-4b47-8960-67dad90e33fb.mp4");
+      background-image: url("https://d3p2r6ofnvoe67.cloudfront.net/media/41fef42a-3d20-4fd7-b82b-4308feb82bb8.jpeg");
       background-size: cover;
   }
   
@@ -293,7 +293,7 @@ src="https://www.facebook.com/tr?id=4000972610115988&ev=PageView&noscript=1"
     
 
     
-
+    
     <script>
         window.addEventListener("load", function() {
             setTimeout(function() {
@@ -303,6 +303,49 @@ src="https://www.facebook.com/tr?id=4000972610115988&ev=PageView&noscript=1"
             }, 5000);
         });
     </script>
+    
+    <script>
+  /**
+   * Phone number obfuscation to prevent bot scraping
+   * Decodes phone numbers from data attributes and initiates calls
+   */
+  function deobfuscateNumber(number) {
+    const isObfuscated = "False" === "True";
+    if (!isObfuscated) {
+      return number;
+    }
+    const binaryPD = atob(number);
+    const bytesPD = Uint8Array.from(binaryPD, (c) => c.charCodeAt(0));
+    const decodedPD = new TextDecoder("utf-8").decode(bytesPD);
+    const phone = decodedPD.slice(20);
+
+    return phone;
+  }
+
+  function initiateCall(element) {
+    const pref = "tel:";
+
+    try {
+      const pd = element.getAttribute("data-phone");
+      if (!pd) {
+        console.error("No phone number found on element to call");
+        return;
+      }
+      const phone = deobfuscateNumber(pd);
+
+      window.location.href = pref + phone;
+    } catch (error) {
+      console.error("Error:", error);
+
+      // Try calling the phone number
+      const fallbackPhone = element.getAttribute("data-phone");
+      if (fallbackPhone) {
+        window.location.href = pref + fallbackPhone.replace(/[^0-9]/g, "");
+      }
+    }
+  }
+</script>
+
 </body>
 
 </html>
