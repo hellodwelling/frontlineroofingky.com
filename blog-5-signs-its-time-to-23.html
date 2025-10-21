@@ -651,6 +651,26 @@
                             >
                                 
                                     <a
+                                        href=" team "
+                                        class=" border-transparent   hover:border-gray-300 hover:text-gray-700  group pb-5 pt-6 inline-flex items-center px-1 transition text-sm font-medium  focus:outline-none focus:ring-0 focus:ring-offset-0 uppercase"
+                                        :class="{ 'text-primary': true }"
+                                    >
+                                        Team
+                                    </a>
+                                
+                                
+
+                            </div>
+                        
+                            <div
+                                class="relative flex items-center"
+                                x-trap.inert="desktopOpen"
+                                x-data="{ desktopOpen: false }"
+                                @keydown.escape.stop="desktopOpen = false"
+                                @click.away="desktopOpen = false"
+                            >
+                                
+                                    <a
                                         href=" blog "
                                         class=" border-secondary hover:border-gray-300    hover:border-gray-300 hover:text-gray-700  group pb-5 pt-6 inline-flex items-center px-1 transition text-sm font-medium  focus:outline-none focus:ring-0 focus:ring-offset-0 uppercase"
                                         :class="{ 'text-primary': true }"
@@ -947,6 +967,17 @@
                                             href=" reviews "
                                             class="text-gray-500 block px-3 py-2 text-base font-medium rounded-md border-secondary transition uppercase"
                                             >Reviews</a
+                                        >
+                                    
+                                    
+                                </div>
+                            
+                                <div x-trap.inert="openMenu == 'navitem_5'">
+                                    
+                                        <a
+                                            href=" team "
+                                            class="text-gray-500 block px-3 py-2 text-base font-medium rounded-md border-secondary transition uppercase"
+                                            >Team</a
                                         >
                                     
                                     
@@ -2042,6 +2073,14 @@ Lastly, the age of your roof is a significant factor in determining whether it's
                               >
                           </li>
                           
+                          
+                          <li>
+                              <a
+                                  href="team"
+                                  class="text-base text-gray-100 rounded hover:text-gray-300 focus:ring-0 focus:ring-offset-0"
+                                  >Team</a
+                              >
+                          </li>
                           
                           
                           
